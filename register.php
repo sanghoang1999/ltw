@@ -126,7 +126,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                     tiuh@tiuh.corp
                 </div>
                 <div class="col-md-3"></div>
-                <div class="col-md-2"><i class="fa fa-user" aria-hidden="true"> </i> <a style="color: white; text-decoration: none;" href="login.html"> Tài khoản </a></div>
+                <div class="col-md-2"><i class="fa fa-user" aria-hidden="true"> </i> <a style="color: white; text-decoration: none;" href="login.php"> Tài khoản </a></div>
                 <div class="col-md-2"><i class="fa fa-cart-plus" aria-hidden="true"> </i> <a style="color: white; text-decoration: none;" href="buy.html"> Giỏ hàng </a></div>
             </div>
         </div>
