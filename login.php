@@ -121,7 +121,18 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                     tiuh@tiuh.corp
                 </div>
                 <div class="col-md-3"></div>
-                <div class="col-md-2"><i class="fa fa-user" aria-hidden="true"> </i> <a style="color: white; text-decoration: none;" href="login.html"> Tài khoản </a></div>
+                <div class="col-md-2"><i class="fa fa-user" aria-hidden="true"> </i> <a class="dropdown-toggle" style="color: white; text-decoration: none;" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Tài khoản
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="#">Chào,....</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="sale.html">Dashboard</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="login.php">Đăng nhập</a>
+                  <a class="dropdown-item" href="register.php">Đăng kí</a>
+                  <a class="dropdown-item" href="logout.php">Đăng xuất</a>
+                </div></div>
                 <div class="col-md-2"><i class="fa fa-cart-plus" aria-hidden="true"> </i> <a style="color: white; text-decoration: none;" href="buy.html"> Giỏ hàng </a></div>
             </div>
         </div>
