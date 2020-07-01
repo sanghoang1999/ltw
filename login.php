@@ -194,19 +194,19 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
   <div class="container pt-5">
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
         <div class="form-group <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">
-            <label>Username</label>
+            <label>Tài khoản</label>
             <input type="text" name="username" size=30 class="form-control" value="<?php echo $username; ?>">
             <span class="help-block"><?php echo $username_err; ?></span>
         </div>
         <div class="form-group <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
-            <label>Password</label>
+            <label>Mật khẩu</label>
             <input type="password" name="password" size=30 class="form-control">
             <span class="help-block"><?php echo $password_err; ?></span>
         </div>
         <div class="form-group">
-            <input type="submit" class="btn btn-primary" value="Login">
+            <input type="submit" class="btn btn-primary" value="Đăng nhập">
         </div>
-        <p>Don't have an account? <a href="register.php">Sign up now</a>.</p>
+        <p>Nếu bạn không có tài khoản? <a href="register.php">Đăng kí ngay</a>.</p>
     </form>
   </div>
 
