@@ -101,7 +101,7 @@
          <div class="carousel-caption d-none d-md-block">
           <h1>NIKE ELECTRO COLLECTION</h1>
            <p>Dòng sản phẩm thế hệ S1 mới nhất của Nike.</p>
-           <button class="btn btn-info btn-lg">Shop Now</button>
+           <a class="btn btn-info btn-lg" href="shoes.php">Shop Now</a>
          </div>
       </div>
       <div class="carousel-item">
@@ -109,7 +109,7 @@
         <div class="carousel-caption d-none d-md-block">
           <h1>BEST AUTUMN COLLECTION</h1>
            <p>Bộ sưu tập giày bán chạy nhất mùa thu của Nike.</p>
-           <button class="btn btn-info btn-lg">Shop Now</button>
+           <a class="btn btn-info btn-lg" href="shoes.php">Shop Now</a>
          </div>
       </div>
 
