@@ -19,7 +19,7 @@
       }
     </script>
     <link rel="stylesheet" href="css/style.css">
-    <title>Accessories</title>
+    <title>Sale</title>
 </head>
 <body>
 <!--top bar (pt=padding top ,pb=padding bottom) -->
@@ -37,13 +37,13 @@
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <a class="dropdown-item" href="#">Chào,....</a>
                   <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="sale.html">Dashboard</a>
+                  <a class="dropdown-item" href="sale.php">Dashboard</a>
                   <div class="dropdown-divider"></div>
                   <a class="dropdown-item" href="login.php">Đăng nhập</a>
                   <a class="dropdown-item" href="register.php">Đăng kí</a>
                   <a class="dropdown-item" href="logout.php">Đăng xuất</a>
                 </div></div>
-                <div class="col-md-2"><i class="fa fa-cart-plus" aria-hidden="true"> </i> <a style="color: white; text-decoration: none;" href="buy.html"> Giỏ hàng </a></div>
+                <div class="col-md-2"><i class="fa fa-cart-plus" aria-hidden="true"> </i> <a style="color: white; text-decoration: none;" href="cart.php"> Giỏ hàng </a></div>
             </div>
         </div>
     </div>
@@ -53,7 +53,7 @@
 <div class="container-fluid bg-black">
 
     <nav class="container navbar navbar-expand-lg navbar-dark bg-black">
-            <a class="navbar-brand" href="index.html"><h1>Tiuh</h1></a>
+            <a class="navbar-brand" href="index.php"><h1>Tiuh</h1></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
@@ -61,20 +61,20 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                  <a class="nav-link" href="index.html">Trang chủ <span class="sr-only">(current)</span></a>
+                  <a class="nav-link" href="index.php">Trang chủ <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="intro.html">Giới thiệu</a>
+                  <a class="nav-link" href="intro.php">Giới thiệu</a>
                 </li>
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Sản Phẩm
                   </a>
                   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="shoes.html">Giày</a>
-                    <a class="dropdown-item" href="accessories.html">Phụ Kiện</a>
+                    <a class="dropdown-item" href="shoes.php">Giày</a>
+                    <a class="dropdown-item" href="accessories.php">Phụ Kiện</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="sale.html">Giảm giá</a>
+                    <a class="dropdown-item" href="sale.php">Giảm giá</a>
                   </div>
                 </li>
                 <li class="nav-item">
@@ -96,7 +96,7 @@
   <div class="container pt-5">
 
     <div class="row">
-      <h3>PHỤ KIỆN</h3>
+      <h3>HÀNG GIẢM GIÁ</h3>
     </div>
       <div class="row">
       <div class="underline"></div>
@@ -109,10 +109,10 @@
     <div class="row">
       <div class="col-md-3">
         <div class="card">
-          <img src="img/img-41.jpg" alt="card-1" class="card-img-top">
+          <img src="img/img-18.jpg" alt="card-1" class="card-img-top">
           <div class="card-body">
-            <h5>Ống đồng, Vớ</h5>
-            <h6>$76.00</h6>
+            <h5>Hypervenom Black</h5>
+            <h6>$34.00 <span style="text-decoration: line-through">$56.00</span></h6>
             <button class="btn btn-danger"><i class="fa fa-cart-plus" aria-hidden="true"></i> Thêm vào giỏ</button>
           </div>
         </div>
@@ -120,10 +120,10 @@
 
       <div class="col-md-3">
         <div class="card">
-          <img src="img/img-42.jpg" alt="card-1" class="card-img-top">
+          <img src="img/img-19.jpg" alt="card-1" class="card-img-top">
           <div class="card-body">
-            <h5>Bao tay</h5>
-            <h6>$75.00</h6>
+            <h5>Mercurial S6</h5>
+            <h6>$44.00 <span style="text-decoration: line-through">$56.00</span></h6>
             <button class="btn btn-danger"><i class="fa fa-cart-plus" aria-hidden="true"></i> Thêm vào giỏ</button>
           </div>
         </div>
@@ -131,10 +131,10 @@
 
       <div class="col-md-3">
         <div class="card">
-          <img src="img/img-43.jpg" alt="card-1" class="card-img-top">
+          <img src="img/img-20.jpg" alt="card-1" class="card-img-top">
           <div class="card-body">
-            <h5>Găng tay</h5>
-            <h6>$52.00</h6>
+            <h5>Mercurial S2</h5>
+            <h6>$52.00 <span style="text-decoration: line-through">$56.00</span></h6>
             <button class="btn btn-danger"><i class="fa fa-cart-plus" aria-hidden="true"></i> Thêm vào giỏ</button>
           </div>
         </div>
@@ -144,10 +144,10 @@
 
       <div class="col-md-3">
         <div class="card">
-          <img src="img/img-44.jpg" alt="card-1" class="card-img-top">
+          <img src="img/img-4.jpg" alt="card-1" class="card-img-top">
           <div class="card-body">
-            <h5>Ống đồng</h5>
-            <h6>$66.00</h6>
+            <h5>Mercurial Super</h5>
+            <h6>$66.00 <span style="text-decoration: line-through">$67.00</span></h6>
             <button class="btn btn-danger"><i class="fa fa-cart-plus" aria-hidden="true"></i> Thêm vào giỏ</button>
           </div>
         </div>
@@ -158,7 +158,7 @@
           <img src="img/img-15.jpg" alt="card-1" class="card-img-top">
           <div class="card-body">
             <h5>Ống đồng, Vớ</h5>
-            <h6>$76.00</h6>
+            <h6>$12.00 <span style="text-decoration: line-through">$20.00</span></h6>
             <button class="btn btn-danger"><i class="fa fa-cart-plus" aria-hidden="true"></i> Thêm vào giỏ</button>
           </div>
         </div>
@@ -169,7 +169,7 @@
           <img src="img/img-16.jpg" alt="card-1" class="card-img-top">
           <div class="card-body">
             <h5>Ống đồng</h5>
-            <h6>$75.00</h6>
+            <h6>$5.00 <span style="text-decoration: line-through">$6.00</span></h6>
             <button class="btn btn-danger"><i class="fa fa-cart-plus" aria-hidden="true"></i> Thêm vào giỏ</button>
           </div>
         </div>
@@ -180,7 +180,7 @@
           <img src="img/img-17.jpg" alt="card-1" class="card-img-top">
           <div class="card-body">
             <h5>Bó cổ tay</h5>
-            <h6>$52.00</h6>
+            <h6>$12.00 <span style="text-decoration: line-through">$15.00</span></h6>
             <button class="btn btn-danger"><i class="fa fa-cart-plus" aria-hidden="true"></i> Thêm vào giỏ</button>
           </div>
         </div>
@@ -193,7 +193,7 @@
           <img src="img/img-45.jpg" alt="card-1" class="card-img-top">
           <div class="card-body">
             <h5>Bao tay</h5>
-            <h6>$66.00</h6>
+            <h6>$16.00 <span style="text-decoration: line-through">$25.00</span></h6>
             <button class="btn btn-danger"><i class="fa fa-cart-plus" aria-hidden="true"></i> Thêm vào giỏ</button>
           </div>
         </div>
@@ -328,7 +328,7 @@
 
   <div class="container mt-0">
     <div class="row">
-      <h4>ÁO ĐẤU</h4>
+      <h4>ÁO ĐẤU KHUYẾN MÃI</h4>
     </div>
     <div class="row">
       <div class="underline"></div>
@@ -342,7 +342,7 @@
           <img src="img/img-21.jpg" class="card-img-top" alt="shirt1">
           <div class="card-body">
             <h4>Korea Shirt</h4>
-            <h6>$22.87</h6>
+            <h6>$22.87 <span style="text-decoration: line-through">$56.00</span></h6>
             <button class="btn btn-danger"><i class="fa fa-cart-plus" aria-hidden="true"></i> Thêm vào giỏ</button>
           </div>
         </div>
@@ -353,7 +353,7 @@
           <img src="img/img-22.jpg" class="card-img-top" alt="shirt2">
           <div class="card-body">
             <h4>Nigeria Shirt</h4>
-            <h6>$22.87</h6>
+            <h6>$22.87 <span style="text-decoration: line-through">$56.00</span></h6>
             <button class="btn btn-danger"><i class="fa fa-cart-plus" aria-hidden="true"></i> Thêm vào giỏ</button>
           </div>
         </div>
@@ -364,7 +364,7 @@
           <img src="img/img-23.jpg" class="card-img-top" alt="shirt3">
           <div class="card-body">
             <h4>USA Shirt</h4>
-            <h6>$22.87</h6>
+            <h6>$22.87 <span style="text-decoration: line-through">$56.00</span></h6>
             <button class="btn btn-danger"><i class="fa fa-cart-plus" aria-hidden="true"></i> Thêm vào giỏ</button>
           </div>
         </div>
@@ -375,7 +375,7 @@
           <img src="img/img-24.jpg" class="card-img-top" alt="shirt4">
           <div class="card-body">
             <h4>Norway Shirt</h4>
-            <h6>$22.87</h6>
+            <h6>$22.87 <span style="text-decoration: line-through">$56.00</span></h6>
             <button class="btn btn-danger"><i class="fa fa-cart-plus" aria-hidden="true"></i> Thêm vào giỏ</button>
           </div>
         </div>

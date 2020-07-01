@@ -4,7 +4,7 @@ session_start();
 
 // Check if the user is already logged in, if yes then redirect to homepage
 if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
-    header("location: index.html");
+    header("location: index.php");
     exit;
 }
 
@@ -64,7 +64,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             $_SESSION["username"] = $username;
 
                             // Redirect user to homepage
-                            header("location: index.html");
+                            header("location: index.php");
                         } else{
                             // Display an error message if password is not valid
                             $password_err = "The password you entered was not valid.";
@@ -127,13 +127,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <a class="dropdown-item" href="#">Chào,....</a>
                   <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="sale.html">Dashboard</a>
+                  <a class="dropdown-item" href="sale.php">Dashboard</a>
                   <div class="dropdown-divider"></div>
                   <a class="dropdown-item" href="login.php">Đăng nhập</a>
                   <a class="dropdown-item" href="register.php">Đăng kí</a>
                   <a class="dropdown-item" href="logout.php">Đăng xuất</a>
                 </div></div>
-                <div class="col-md-2"><i class="fa fa-cart-plus" aria-hidden="true"> </i> <a style="color: white; text-decoration: none;" href="buy.html"> Giỏ hàng </a></div>
+                <div class="col-md-2"><i class="fa fa-cart-plus" aria-hidden="true"> </i> <a style="color: white; text-decoration: none;" href="cart.php"> Giỏ hàng </a></div>
             </div>
         </div>
     </div>
@@ -143,7 +143,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 <div class="container-fluid bg-black">
 
     <nav class="container navbar navbar-expand-lg navbar-dark bg-black">
-            <a class="navbar-brand" href="index.html"><h1>Tiuh</h1></a>
+            <a class="navbar-brand" href="index.php"><h1>Tiuh</h1></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
@@ -151,20 +151,20 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                  <a class="nav-link" href="index.html">Trang chủ <span class="sr-only">(current)</span></a>
+                  <a class="nav-link" href="index.php">Trang chủ <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="intro.html">Giới thiệu</a>
+                  <a class="nav-link" href="intro.php">Giới thiệu</a>
                 </li>
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Sản Phẩm
                   </a>
                   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="shoes.html">Giày</a>
-                    <a class="dropdown-item" href="accessories.html">Phụ Kiện</a>
+                    <a class="dropdown-item" href="shoes.php">Giày</a>
+                    <a class="dropdown-item" href="accessories.php">Phụ Kiện</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="sale.html">Giảm giá</a>
+                    <a class="dropdown-item" href="sale.php">Giảm giá</a>
                   </div>
                 </li>
                 <li class="nav-item">
