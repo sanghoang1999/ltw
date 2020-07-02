@@ -1,3 +1,22 @@
+<?php 
+  session_start();
+  
+  function isAdmin() {
+    if ( isset( $_SESSION['username'] ) && $_SESSION['username'] && '1' == $_SESSION['user_level']) {
+        return true;
+    } else {
+        return false;
+    }
+  }
+  function isNotLoggedIn() {
+    if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
+      return true;
+    } else {
+      return false;
+    }
+  }
+?>
+
 <!DOCTYPE html>
 <html lang="vi">
 <head>
@@ -35,13 +54,11 @@
                 Tài khoản
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="#">Chào,....</a>
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="sale.php">Dashboard</a>
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="login.php">Đăng nhập</a>
-                  <a class="dropdown-item" href="register.php">Đăng kí</a>
-                  <a class="dropdown-item" href="logout.php">Đăng xuất</a>
+                <a class="dropdown-item" href="#"  <?php if (isNotLoggedIn()){ echo 'style="display:none;"'; } ?> >Chào,....</a>
+                  <a class="dropdown-item" href="dashboard.php" <?php if (!isAdmin()) { echo 'style="display:none;"'; } ?> >Dashboard</a>
+                  <a class="dropdown-item" href="login.php" <?php if (!isNotLoggedIn()){ echo 'style="display:none;"'; } ?> >Đăng nhập</a>
+                  <a class="dropdown-item" href="register.php" <?php if (!isNotLoggedIn()){ echo 'style="display:none;"'; } ?> >Đăng kí</a>
+                  <a class="dropdown-item" href="logout.php" <?php if (isNotLoggedIn()){ echo 'style="display:none;"'; } ?> >Đăng xuất</a>
                 </div></div>
                 <div class="col-md-2"><i class="fa fa-cart-plus" aria-hidden="true"> </i> <a style="color: white; text-decoration: none;" href="cart.php"> Giỏ hàng </a></div>
             </div>
