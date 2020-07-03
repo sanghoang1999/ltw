@@ -1,6 +1,6 @@
-<?php 
+<?php
   session_start();
-  
+
   function isAdmin() {
     if ( isset( $_SESSION['username'] ) && $_SESSION['username'] && '1' == $_SESSION['user_level']) {
         return true;
@@ -99,8 +99,8 @@
                 </li>
               </ul>
               <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                <input class="form-control mr-sm-2" id="link-box" type="text" placeholder="Search" aria-label="Search">
+                <input class="btn btn-outline-success my-2 my-sm-0" type="button" value="Search" onclick="window.location = document.getElementById('link-box').value;">
               </form>
             </div>
           </nav>
