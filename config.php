@@ -8,6 +8,7 @@
     
     /* Attempt to connect to MySQL database */
     $mysqli = new mysqli(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
+    $con = mysqli_connect("localhost","root","","demo");
     
     // Check connection
     if($mysqli === false){
