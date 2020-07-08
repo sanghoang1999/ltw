@@ -1,6 +1,6 @@
-<?php 
+<?php
   session_start();
-  
+
   function isAdmin() {
     if ( isset( $_SESSION['username'] ) && $_SESSION['username'] && '1' == $_SESSION['user_level']) {
         return true;
@@ -35,6 +35,16 @@
     <script type="text/javascript">
       function toBottom() {
         window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' })
+      }
+      function goTo(){
+        var a = document.getElementById('link_id').value;
+        if(a=='shoes' || a=='nike' || a=='giày' || a=='giày đá bóng')
+          location.href = 'shoes.php';
+        else if(a=='phụ kiện'||a=='accessories'||a=='vớ giày' || a=='găng tay')
+          location.href = 'accessories.php';
+        else if(a=='giày giảm giá'||a=='đồ giảm giá'| a=='sale')
+          location.href = 'sale.php';
+
       }
     </script>
     <link rel="stylesheet" href="css/style.css">
@@ -99,8 +109,8 @@
                 </li>
               </ul>
               <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                <input class="form-control mr-sm-2" id="link_id" type="text" placeholder="Search" aria-label="Search">
+                <input class="btn btn-outline-success my-2 my-sm-0" type="button" value="Search" onclick="javascript:goTo()">
               </form>
             </div>
           </nav>
@@ -210,12 +220,13 @@
           <div class="underline bg-light" style="width: 50px;"></div>
           </div>
 
-              <p><i class="fa fa-chevron-right" aria-hidden="true"></i> Đăng kí</p>
-              <p><i class="fa fa-chevron-right" aria-hidden="true"></i> Đăng nhập</p>
-              <p><i class="fa fa-chevron-right" aria-hidden="true"></i> Bảo mật</p>
-              <p><i class="fa fa-chevron-right" aria-hidden="true"></i> Bình luận</p>
-              <p><i class="fa fa-chevron-right" aria-hidden="true"></i> Hướng dẫn</p>
-
+          <a href="register.php" style="color: white; text-decoration: none;"><i class="fa fa-chevron-right" aria-hidden="true"></i> Đăng kí</a>
+          <p></p>
+          <a href="login.php" style="color: white; text-decoration: none;"><i class="fa fa-chevron-right" aria-hidden="true"></i> Đăng nhập</a>
+          <p></p>
+          <p><i class="fa fa-chevron-right" aria-hidden="true"></i> Bảo mật</p>
+          <p><i class="fa fa-chevron-right" aria-hidden="true"></i> Bình luận</p>
+          <a href="intro.php" style="color: white; text-decoration: none;"><i class="fa fa-chevron-right" aria-hidden="true"></i> Hướng dẫn</a>
           </div>
 
 
@@ -267,7 +278,7 @@
           <div class="row mb-4">
           <div class="underline bg-light" style="width: 50px;"></div>
           </div>
-          <button class="btn btn-outline-light">Nike</button> <button class="btn btn-outline-light">Giày đá banh</button> <button class="btn btn-outline-light">Phụ kiện</button> <button class="btn btn-outline-light">Sale</button> <button class="btn btn-outline-light">Adidas</button>
+          <a class="btn btn-outline-light" type="button" href="shoes.php">Nike</a> <a class="btn btn-outline-light" type="button" href="shoes.php">Giày đá banh</a> <a class="btn btn-outline-light" type="button" href="accessories.php">Phụ kiện</a> <a class="btn btn-outline-light" type="button" href="sale.php">Sale</a> <button class="btn btn-outline-light">Adidas</button>
           </div>
         </div>
       </div>
