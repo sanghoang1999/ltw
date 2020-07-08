@@ -127,6 +127,36 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     function toBottom() {
       window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' })
     }
+    function check(){
+      var inVar = document.getElementById("username").value;
+      var inPass = document.getElementById("password").value;
+      var inRepass = document.getElementById("repassword").value;
+      if(inVar == "" && inPass == ""){
+        window.alert("Bạn chưa nhập tài khoản và mật khẩu!");
+        return false;
+      }
+      if(inVar == ""){
+        window.alert("Bạn chưa nhập tài khoản!");
+        return false;
+      }
+      if(inPass == ""){
+        window.alert("Bạn chưa nhập mật khẩu!");
+        return false;
+      }
+      if(inRepass == ""){
+        window.alert("Bạn chưa xác nhận mật khẩu!");
+        return false;
+      }
+      if(inRepass != inPass){
+        window.alert("Mật khẩu xác nhận không khớp!");
+        return false;
+      }
+      if(inPass.length < 5){
+        window.alert("Mật khẩu của bạn quá ngắn!");
+        return false;
+      }
+      return true;
+    }
   </script>
   <link rel="stylesheet" href="css/style.css">
   <title>Register</title>
@@ -213,21 +243,21 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
         <div class="form-group <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">
             <label>Tài khoản</label>
-            <input type="text" name="username" class="form-control" value="<?php echo $username; ?>">
+            <input type="text" id="username" name="username" class="form-control" value="<?php echo $username; ?>">
             <span class="help-block"><?php echo $username_err; ?></span>
         </div>
         <div class="form-group <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
             <label>Mật khẩu</label>
-            <input type="password" name="password" class="form-control" value="<?php echo $password; ?>">
+            <input type="password" id="password" name="password" class="form-control" value="<?php echo $password; ?>">
             <span class="help-block"><?php echo $password_err; ?></span>
         </div>
         <div class="form-group <?php echo (!empty($confirm_password_err)) ? 'has-error' : ''; ?>">
             <label>Xác nhận Mật khẩu</label>
-            <input type="password" name="confirm_password" class="form-control" value="<?php echo $confirm_password; ?>">
+            <input type="password" id="repassword" name="confirm_password" class="form-control" value="<?php echo $confirm_password; ?>">
             <span class="help-block"><?php echo $confirm_password_err; ?></span>
         </div>
         <div class="form-group">
-            <input type="submit" class="btn btn-primary" value="Đăng ký">
+            <input type="button" class="btn btn-primary" value="Đăng ký" onclick="javascript:check()">
             <input type="reset" class="btn btn-default" value="Làm mới">
         </div>
         <p>Nếu bạn đã có tài khoản? <a href="login.php">Đăng nhập ngay</a>.</p>
@@ -252,11 +282,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
           <div class="underline bg-light" style="width: 50px;"></div>
           </div>
 
-              <p><i class="fa fa-chevron-right" aria-hidden="true"></i> Đăng kí</p>
-              <p><i class="fa fa-chevron-right" aria-hidden="true"></i> Đăng nhập</p>
-              <p><i class="fa fa-chevron-right" aria-hidden="true"></i> Bảo mật</p>
-              <p><i class="fa fa-chevron-right" aria-hidden="true"></i> Bình luận</p>
-              <p><i class="fa fa-chevron-right" aria-hidden="true"></i> Hướng dẫn</p>
+          <a href="register.php" style="color: white; text-decoration: none;"><i class="fa fa-chevron-right" aria-hidden="true"></i> Đăng kí</a>
+          <p></p>
+          <a href="login.php" style="color: white; text-decoration: none;"><i class="fa fa-chevron-right" aria-hidden="true"></i> Đăng nhập</a>
+          <p></p>
+          <p><i class="fa fa-chevron-right" aria-hidden="true"></i> Bảo mật</p>
+          <p><i class="fa fa-chevron-right" aria-hidden="true"></i> Bình luận</p>
+          <a href="intro.php" style="color: white; text-decoration: none;"><i class="fa fa-chevron-right" aria-hidden="true"></i> Hướng dẫn</a>
 
           </div>
 
