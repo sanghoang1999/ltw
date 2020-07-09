@@ -1,6 +1,6 @@
 <?php
     include('model/product.php');
-
+    include('model/pager.php');
     class C_product {
         public function getAllProduct() {
             $m_product= new M_product();
@@ -12,7 +12,7 @@
             $result = $m_product->deleteProduct($id);
             return $result;
         }
-        public function addProduct($name,$price,$brand,$cate,$code,$image) {
+        public function addProduct($name,$price,$brand,$cate,$code,$image,$imported_price,$status) {
             $target_dir = "img/";
             $file_name = time().'.'.basename($image['name']);
             $target_file = $target_dir.basename($image["name"]);
@@ -44,7 +44,7 @@
                 } else {
                 if (move_uploaded_file($image["tmp_name"], __DIR__.'/../../'.$target_file)) {
                     $m_product = new M_product();
-                     $result= $m_product->addProduct($name,$price,$brand,$cate,$target_file,$code); 
+                     $result= $m_product->addProduct($name,$price,$brand,$cate,$target_file,$code,$imported_price,$status); 
                     return true;
                 } else {
                     echo "Sorry, there was an error uploading your file.";
@@ -90,8 +90,6 @@
                 if (move_uploaded_file($image["tmp_name"], __DIR__.'/../../'.$target_file)) {
                     $m_product = new M_product();
                      $result= $m_product->updateProduct($id,$name,$price,$brand,$cate,$target_file,$code);
-                     print_r($result);
-                     die(); 
                     return true;
                 } else {
                     echo "Sorry, there was an error uploading your file.";
@@ -100,36 +98,20 @@
 
             }
         } //end function
-        public function getProductById($id) {
+        public function getProducts() {
             $m_product = new M_product();
-            return $m_product->getProductById($id);
-        }
-        public function tintuc($id)
-        {
-            $m_tintuc=new M_tintuc();
-            $menus=$m_tintuc->getMenu();    
-            $news=$m_tintuc->getNewsById($id);
             $trang_hientai=isset($_GET['page']) ?$_GET['page'] :1;
-            $pagination = new pagination2(count($news),$trang_hientai,6,5);
+            $count  = $m_product->getCountProduct();
+            $pagination = new pagination($count,$trang_hientai,6,5);
             $paginationHTML=$pagination->showPagination();
-            $limit=$pagination->get_itemOnePage();
+            $limit=$pagination->get_nItemOnPage();
             $vitri=($trang_hientai-1)*$limit;
-            $news=$m_tintuc->getNewsById($id,$vitri,$limit);
-            $type=$m_tintuc->getTypeNewsById($id);
-            return array('menus'=>$menus,'news'=>$news,'type'=>$type,'thanh_phantrang'=>$paginationHTML);
+            $products=$m_product->getProduct($vitri,$limit);
+             return array('pagination'=>$paginationHTML,'products'=>$products);
         }
-        public function ChiTietTin() {
-            $id_tin=$_GET['id_chitiet'];
-            $m_tintuc= new M_tintuc();
-            $new_chitiet=$m_tintuc->getChiTietTinById($id_tin);
-            $comments=$m_tintuc->getCommentById($id_tin);
-            $relatedNews=$m_tintuc->getRelatedNews($id_tin);
-            $hlNews=$m_tintuc->getHlNews($id_tin);
-            return array('chitiet'=>$new_chitiet,'comments'=>$comments,'relatedNews'=>$relatedNews,'hlNews'=>$hlNews);
-        }
-        public function addComment($id_user,$id_tin,$noidung) {
-            $m_tintuc=new M_tintuc();
-            return $m_tintuc->addComment($id_user,$id_tin,$noidung);
+        public function getCountProducts() {
+            $m_product = new M_product();
+            return  $m_product->getCountProduct();
         }
     }
 ?>

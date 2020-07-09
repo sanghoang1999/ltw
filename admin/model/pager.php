@@ -1,6 +1,5 @@
 <?php 
 /**
-* Phân trang by Huong Huong
 */
 class pagination{
 	private $_totalItem;// t?ng s? item
@@ -41,14 +40,14 @@ class pagination{
 			$start 	= '';
 			$prev 	= '';
 			if($this->_currentPage > 1){
-				$start 	= "<li><a href='$actual_link&page=1'>Start</a></li>";
-				$prev 	= "<li><a href='$actual_link&page=".($this->_currentPage-1)."'>«</a></li>";
+				$start 	= "<li><a href='$actual_link?page=1'>Start</a></li>";
+				$prev 	= "<li><a href='$actual_link?page=".($this->_currentPage-1)."'>«</a></li>";
 			}
 			$next 	= '';
 			$end 	= '';
 			if($this->_currentPage < $this->_totalPage){
-				$next 	= "<li><a href='$actual_link&page=".($this->_currentPage+1)."'>«</a></li>";
-				$end 	= "<li><a href='$actual_link&page=".$this->_totalPage."'>End</a></li>";
+				$next 	= "<li><a href='$actual_link?page=".($this->_currentPage+1)."'>«</a></li>";
+				$end 	= "<li><a href='$actual_link?page=".$this->_totalPage."'>End</a></li>";
 			}
 
 			if($this->_nPageShow < $this->_totalPage){
@@ -82,7 +81,7 @@ class pagination{
 				if($i == $this->_currentPage) {
 					$listPages .= "<li class='active'><a href='#'>".$i.'</a>';
 				}else{
-					$listPages .= "<li><a href='$actual_link&page=".$i."'>".$i.'</a>';
+					$listPages .= "<li><a href='$actual_link?page=".$i."'>".$i.'</a>';
 				}
 			}
 			$paginationHTML = '<ul class="pagination">'.$start.$prev.$listPages.$next.$end.'</ul>';

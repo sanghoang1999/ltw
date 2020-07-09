@@ -75,7 +75,7 @@
                 <div class="navbar-header">
                     
                             <!-- guest -->
-                                <a class="navbar-brand" href='#'>TiUh</a>
+                                <a class="navbar-brand" href='dashboard.php'>TiUh</a>
                             <ul class="user-menu">
                                 <li class="dropdown pull-right">
                             

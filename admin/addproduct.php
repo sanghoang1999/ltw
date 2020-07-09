@@ -15,8 +15,10 @@
 				$brand = $_POST['brand'];
 				$category = $_POST['category'];
 				$code = $_POST['code'];
+				$imported_price = $_POST['imported_price'];
+				$stauts = $_POST['status'];
 				$image = $_FILES['img'];
-				$result= $c_product->addProduct($name,$price,$brand,$category,$code,$image);
+				$result= $c_product->addProduct($name,$price,$brand,$category,$code,$image,$imported_price,$stauts);
 				if($result == true) {
 					$_SESSION['success'] = "Bạn đã thêm sản phẩm thành công";
 				}
@@ -135,6 +137,10 @@
 										<input  type="number" name="price" class="form-control" required>
 									</div>
 									<div class="form-group" >
+										<label>Giá nhâp</label>
+										<input  type="number" name="imported_price" class="form-control" required>
+									</div>
+									<div class="form-group" >
 										<label>Ảnh sản phẩm</label>
 										<input required id="img" type="file" name="img" class="form-control hidden" onchange="changeImg(this)">
 									<img id="avatar" class="thumbnail" width="300px" src="img/unnamed.png">
@@ -155,6 +161,10 @@
 									<div class="form-group" >
 										<label>Mã code</label>
 										<input  type="text" name="code" class="form-control"  required>
+									</div>
+									<div class="form-group" >
+										<label>Trạng Thái</label>
+										<input  type="text" name="status" class="form-control"  required>
 									</div>
 									<!-- <div class="form-group" >
 										<label>Trạng thái</label>

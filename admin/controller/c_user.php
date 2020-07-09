@@ -9,4 +9,8 @@
             $m_user = new M_user();
             return $m_user->getUsers();   
         }
+        public function getCountUser() {
+            $m_user = new M_user();
+            return $m_user->getCountUser();
+        }
     }

@@ -22,8 +22,11 @@
 
 
     include('controller/c_product.php');
-    $c_product= new C_product();
-    $products=$c_product->getAllProduct();
+		$c_product= new C_product();
+		$result = $c_product->getProducts();
+		$products = $result['products'];
+		$pagination  = $result['pagination']
+		
 
 ?>
 
@@ -47,7 +50,7 @@
             <div class="container-fluid">
                 <div class="navbar-header">
                             <!-- guest -->
-                                <a class="navbar-brand" href='#'>TiUh</a>
+                                <a class="navbar-brand" href='dashboard.php'>TiUh</a>
                             <ul class="user-menu">
                                 <li class="dropdown pull-right">
                             
@@ -127,7 +130,7 @@
                     <?php $i = 1  ?>
                   <?php foreach ($products as $product):?>
                     <tr>
-											<td> <?php echo $i++ ?> </td>
+											<td> <?php echo $product->id ?> </td>
 											<td><?php echo $product->name ?> </td>
 											<td> <?php echo $product->price ?>  </td>
 											<td>
@@ -152,6 +155,17 @@
 			</div>
 		</div><!--/.row-->
 		<!-- Button trigger modal -->
+
+
+                    <div class="row text-center">
+                        <div class="col-lg-12">
+                            <?php echo $pagination ?> 
+                        </div>
+                    </div>
+
+
+
+
 		
 		<!-- Modal -->
 		<div class="modal fade" id="modelDel" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">

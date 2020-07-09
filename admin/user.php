@@ -50,7 +50,7 @@
             <div class="container-fluid">
                 <div class="navbar-header">
                             <!-- guest -->
-                                <a class="navbar-brand" href='#'>TiUh</a>
+                                <a class="navbar-brand" href='dashboard.php'>TiUh</a>
                             <ul class="user-menu">
                                 <li class="dropdown pull-right">
                             
@@ -92,15 +92,15 @@
     	<div class="col-sm-12" style="margin-top:50px">
         	<!-- <div class="alert alert-success">Added user success!</div> -->
         	<div class="panel-heading" style="background:#337ab7;color:white">Danh sách sản phẩm</div>
-          <a href="adduser.php" style="margin:20 0 20 0" class="btn btn-primary">Thêm ngừoi dùng</a>
         	<table class="table table-striped">
 
             	<tr id="tbl-first-row">
-                    <td width="25%">id</td>
-                    <td width="25%">Username</td>
-                    <td width="25%">Level</td>
-                    <td width="12,5%" id="" >Edit</td>
-                    <td width="12,5%" > Delete</td>
+                    <td width="10%">id</td>
+                    <td width="20%">Username</td>
+                    <td width="20%">Tên</td>
+                    <td width="20%">Điện thoại</td>
+                    <td width="20%">Địa chỉ</td>
+                    <td width="10%" > Delete</td>
                 </tr>
 
 
@@ -111,10 +111,10 @@
                     <tr id="tbl-first-row" >
 											<td> <?php echo $user->id ?> </td>
 											<td><?php echo $user->username ?> </td>
+											<td><?php echo $user->name ?> </td>
+											<td><?php echo $user->phone ?> </td>
+											<td><?php echo $user->address ?> </td>
 											<td> <?php echo $user->user_level ?>  </td>
-											<td>
-												<button  class="btn btn-warning"><i class="fa fa-pencil" aria-hidden="true"></i> Sửa</button>
-                       </td>
                        <td> 
 											<button  class="btn btn-danger" data-id=<?php echo $user->id?> data-name= <?php echo $user->username?> id="btn-del"><i class="fa fa-trash" aria-hidden="true"></i> Xóa</button>
 											</td>

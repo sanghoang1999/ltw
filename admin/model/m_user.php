@@ -1,5 +1,5 @@
 <?php
-    include('database.php');
+    include_once('database.php');
     class M_user extends database {
         public function getUsers() {
 
@@ -13,6 +13,12 @@
             $this->setQuery($sql);
             
             return $this->execute();
+        }
+        public function getCountUser() {
+            $sql="SELECT Count(*) from users WHERE id != 1";
+            $this->setQuery($sql);
+            
+            return $this->loadRecord();
         }
     }
 ?>
