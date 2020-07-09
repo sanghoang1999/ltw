@@ -113,5 +113,9 @@
             $m_product = new M_product();
             return  $m_product->getCountProduct();
         }
+        public function getProductById($id) {
+            $m_product = new M_product();
+            return  $m_product->getProductById($id);
+        }
     }
 ?>

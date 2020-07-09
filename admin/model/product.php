@@ -53,6 +53,11 @@
             $this->setQuery($sql);
             return $this->loadRecord();
         }   
+        public function getProductById($id) {
+            $sql="SELECT * from products where id =$id";
+            $this->setQuery($sql);
+            return $this->loadRow();
+        }   
         public function getProductByName($name) {
             $sql="SELECT * from products where name = $name ";
             $this->setQuery($sql);
