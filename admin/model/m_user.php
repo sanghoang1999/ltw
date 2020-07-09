@@ -3,7 +3,7 @@
     class M_user extends database {
         public function getUsers() {
 
-            $sql="SELECT id,username,user_level FROM users where user_level != 1 ";
+            $sql="SELECT id,username,user_level,name,phone,address FROM users where user_level != 1 ";
             $this->setQuery($sql);
             return $this->loadAllRows();
         }
