@@ -44,7 +44,7 @@
 				$image = $_FILES['img'];
 				$result= $c_product->updateProduct($id,$name,$price,$brand,$category,$code,$image);
 				if($result == true) {
-					$_SESSION['success'] = "Bạn đã thêm sản phẩm thành công";
+					$_SESSION['success'] = "Bạn đã thêm sửa phẩm thành công";
 				}
 			}
 ?>
@@ -105,7 +105,7 @@
     <ul class="nav menu">
         <li role="presentation" class="divider"></li>
         <li class=""><a href="dashboard.php"><svg class="glyph stroked dashboard-dial"><use xlink:href="#stroked-dashboard-dial"></use></svg> Trang chủ</a></li>
-        <li class="active" ><a href="product.php"><svg class="glyph stroked calendar"><use xlink:href="#stroked-calendar"></use></svg> Sản phẩm</a></li>
+        <li ><a href="product.php"><svg class="glyph stroked calendar"><use xlink:href="#stroked-calendar"></use></svg> Sản phẩm</a></li>
         <li class=""><a href="user.php"><svg class="glyph stroked line-graph"><use xlink:href="#stroked-line-graph"></use></svg> Người dùng  </a></li>
         <li role="presentation" class="divider"></li>
     </ul>
@@ -215,8 +215,8 @@
 										Có: <input type="radio"  name="featured"  value="1">
 										Không: <input type="radio" checked name="featured"  value="0">
 									</div> -->
-									<input type="submit" name="submit" value="Thêm" class="btn btn-primary">
-								<a href="/edit" class="btn btn-danger">Hủy bỏ</a>
+									<input type="submit" name="submit" value="Sửa" class="btn btn-primary">
+								<a href="editproduct.php" class="btn btn-danger">Hủy bỏ</a>
 								</div>
 							</div>
 						</form>

@@ -13,6 +13,13 @@
             return $result;
         }
         public function addProduct($name,$price,$brand,$cate,$code,$image,$imported_price,$status) {
+            $m_product = new M_product();
+            $a = $m_product->getProductByName($name);
+            if($a!=false) {
+                return 1;
+            }
+
+
             $target_dir = "img/";
             $file_name = time().'.'.basename($image['name']);
             $target_file = $target_dir.basename($image["name"]);
@@ -45,7 +52,7 @@
                 if (move_uploaded_file($image["tmp_name"], __DIR__.'/../../'.$target_file)) {
                     $m_product = new M_product();
                      $result= $m_product->addProduct($name,$price,$brand,$cate,$target_file,$code,$imported_price,$status); 
-                    return true;
+                    return 2 ;
                 } else {
                     echo "Sorry, there was an error uploading your file.";
                 }
@@ -90,7 +97,7 @@
                 if (move_uploaded_file($image["tmp_name"], __DIR__.'/../../'.$target_file)) {
                     $m_product = new M_product();
                      $result= $m_product->updateProduct($id,$name,$price,$brand,$cate,$target_file,$code);
-                    return true;
+                    return 2;
                 } else {
                     echo "Sorry, there was an error uploading your file.";
                 }

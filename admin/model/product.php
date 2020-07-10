@@ -59,9 +59,9 @@
             return $this->loadRow();
         }   
         public function getProductByName($name) {
-            $sql="SELECT * from products where name = $name ";
+            $sql="SELECT * from products where name = ? ";
             $this->setQuery($sql);
-            return $this->loadRecord();
+            return $this->loadRecord(array($name));
         }   
     }
 ?>
